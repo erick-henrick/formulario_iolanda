@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recadastramento de Usuário</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <style>
+        body {
+            background-color: #e2dfdf;
+            font-family: 'Roboto', sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.397);
+        }
+        .input-field label {
+            color: #9e9e9e;
+        }
+        .input-field input:focus + label,
+        .input-field textarea:focus + label {
+            color: #2196f3 !important;
+        }
+        .input-field input:focus,
+        .input-field textarea:focus {
+            border-bottom: 1px solid #2196f3 !important;
+            box-shadow: 0 1px 0 0 #2196f3 !important;
+        }
+        .select-wrapper .select-dropdown li.selected {
+            background-color: #056eb9;
+        }
+        .btn-large {
+            background-color: #2196f3;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        .btn-large:hover {
+            background-color: #1976d2;
+        }
+        .divider {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .row {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px 0;
+            box-sizing: border-box;
+        }
+        .header-container img {
+            max-width: 120px;
+            height: auto;
+        }
+        .header-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            flex-grow: 1;
+        }
+        .info-section h5 {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        .line {
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        /* Novo CSS para unificar as cores */
+        .row,
+        .input-field input[type=text]:not(.browser-default),
+        .input-field input[type=email]:not(.browser-default),
+        .input-field select {
+            background-color: #ffffff; /* Fundo de todos os campos e da seção do formulário agora é cinza claro */
+        }
+        /* Para o select, é preciso ajustar a cor da borda também */
+        .input-field select {
+            border: 1px solid #9e9e9e; /* Adiciona uma borda para manter a aparência uniforme */
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="card">
+            <div class="card-content">
+                <div class="header-container">
+                    <img src="https://www.detran.pe.gov.br/images/FOTO%202022/Design%20sem%20nome%204.jpg" alt="Logo Detran-PE">
+                    <h5 class="header-title">TERMO DE RECADASTRAMENTO DO USUÁRIO</h5>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRSJe2_Pv3qhXa4l87wjZQRmLsE-ydouwBng&s" alt="Logo Governo de Pernambuco">
+                </div>
+                
+                <form>
+                    <div class="info-section">
+                        <h5 class="line">Informação do Usuário</h5>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <input id="nome" type="text" class="validate">
+                                <label for="nome">Nome Completo</label>
+                            </div>
+                            <div class="input-field col s12 m3">
+                                <input id="cpf" type="text" class="validate">
+                                <label for="cpf">CPF</label>
+                            </div>
+                            <div class="input-field col s12 m3">
+                                <input id="matricula" type="text" class="validate">
+                                <label for="matricula">Matrícula</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input id="cargo" type="text" class="validate">
+                                <label for="cargo">Cargo</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <select id="tipo_usuario">
+                                    <option value="" disabled selected>Escolha uma opção</option>
+                                    <option value="interno">Interno</option>
+                                    <option value="externo">Externo</option>
+                                </select>
+                                <label for="tipo_usuario">Tipo de Usuário</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="setor" type="text" class="validate">
+                                <label for="setor">Setor</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="orgao" type="text" class="validate">
+                                <label for="orgao">Órgão Externo Conveniado</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="endereco" type="text" class="validate">
+                                <label for="endereco">Endereço</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <input id="bairro" type="text" class="validate">
+                                <label for="bairro">Bairro</label>
+                            </div>
+                            <div class="input-field col s12 m5">
+                                <input id="cidade" type="text" class="validate">
+                                <label for="cidade">Cidade</label>
+                            </div>
+                            <div class="input-field col s12 m3">
+                                <select id="uf">
+                                    <option value="" disabled selected>UF</option>
+                                    <option value="AC">AC</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AP">AP</option>
+                                    <option value="AM">AM</option>
+                                    <option value="BA">BA</option>
+                                    <option value="CE">CE</option>
+                                    <option value="DF">DF</option>
+                                    <option value="ES">ES</option>
+                                    <option value="GO">GO</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MT">MT</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MG">MG</option>
+                                    <option value="PA">PA</option>
+                                    <option value="PB">PB</option>
+                                    <option value="PR">PR</option>
+                                    <option value="PE">PE</option>
+                                    <option value="PI">PI</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RN">RN</option>
+                                    <option value="RS">RS</option>
+                                    <option value="RO">RO</option>
+                                    <option value="RR">RR</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SP">SP</option>
+                                    <option value="SE">SE</option>
+                                    <option value="TO">TO</option>
+                                </select>
+                                <label for="uf">UF</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input id="cep" type="text" class="validate">
+                                <label for="cep">CEP</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input id="telefone" type="text" class="validate">
+                                <label for="telefone">Telefone</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="email" type="email" class="validate">
+                                <label for="email">E-mail</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h5 class="line">Logins</h5>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <input id="redes" type="text" class="validate">
+                                <label for="redes">Redes</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input id="siig" type="text" class="validate">
+                                <label for="siig">SIIG</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input id="habilitacao" type="text" class="validate">
+                                <label for="habilitacao">Habilitação</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input id="veiculos" type="text" class="validate">
+                                <label for="veiculos">Veículos</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="info-section">
+                        <div class="row" style="background-color: #ffffff; padding: 20px;">
+                            <p>Os dados informados serão utilizados para fins de recadastramento do usuário no sistema DETRAN-PE.</p>
+                            <p>Data do Recadastramento: (Preenchimento Automático pelo sistema)</p>
+                            <br>
+                            <div class="col s12 m6 center-align">
+                                <p style="margin-bottom: 0;">___________________________________</p>
+                                <p>Usuário</p>
+                            </div>
+                            <div class="col s12 m6 center-align">
+                                <p style="margin-bottom: 0;">___________________________________</p>
+                                <p>Responsável</p>
+                            </div>
+                            <div class="col s12">
+                                <br>
+                                <div class="input-field col s12 m6">
+                                    <input id="responsavel_nome" type="text" class="validate">
+                                    <label for="responsavel_nome">Responsável:</label>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <input id="responsavel_cpf" type="text" class="validate">
+                                    <label for="responsavel_cpf">CPF:</label>
+                                </div>
+                            </div>
+                            <div class="col s12">
+                                <p>Anexa cópia do documento de identificação ao Termo de Recadastramento.</p>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="center-align">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            M.FormSelect.init(document.querySelectorAll('select'));
+        });
+    </script>
+</body>
+</html>
